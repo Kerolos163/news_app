@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:news_app/core/service_locator.dart';
 import 'package:news_app/features/home/models/news_article_model.dart';
@@ -20,10 +22,11 @@ class SearchProvider extends ChangeNotifier {
     isLoading = true;
     errorMessage = null;
     notifyListeners();
-
+    log('query: ${query}');
     try {
       final repository = locator<BaseNewsApiRepository>();
       articles = await repository.fetchEverything(query: query);
+      
       isLoading = false;
       notifyListeners();
     } catch (e) {
