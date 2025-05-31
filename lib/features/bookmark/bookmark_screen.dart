@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:news_app/core/extensions/date_time.dart';
-import 'package:news_app/core/serves/preference_manager.dart';
+import 'package:news_app/core/serves/constant_key.dart';
 import 'package:news_app/features/home/widgets/news_card.dart';
 
 class BookmarkScreen extends StatelessWidget {
