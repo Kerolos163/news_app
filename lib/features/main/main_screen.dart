@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:news_app/features/bookmark/bookmark_screen.dart';
 import 'package:news_app/features/home/home_screen.dart';
 import 'package:news_app/features/profile/profile_screen.dart';
@@ -31,15 +32,54 @@ class _MainScreenState extends State<MainScreen> {
           });
         },
         currentIndex: _currentScreenIndex,
-        items: const [
+        items: [
           /// TODO : Task - Add Svg Picture Instead Of Icons
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.bookmark_border), label: 'Bookmark'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
+          BottomNavigationBarItem(
+            icon: CustomSVG(
+              imgPath: "assets/images/homeIcon.svg",
+              isSelected: _currentScreenIndex == 0,
+            ),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSVG(
+              imgPath: "assets/images/searchIcon.svg",
+              isSelected: _currentScreenIndex == 1,
+            ),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSVG(
+              imgPath: "assets/images/BookMarkIcon.svg",
+              isSelected: _currentScreenIndex == 2,
+            ),
+            label: 'Bookmark',
+          ),
+          BottomNavigationBarItem(
+            icon: CustomSVG(
+              imgPath: "assets/images/profileIcon.svg",
+              isSelected: _currentScreenIndex == 3,
+            ),
+            label: 'Profile',
+          ),
         ],
       ),
       body: _screens[_currentScreenIndex],
+    );
+  }
+}
+
+class CustomSVG extends StatelessWidget {
+  const CustomSVG({super.key, required this.imgPath, required this.isSelected});
+  final String imgPath;
+  final bool isSelected;
+
+  @override
+  Widget build(BuildContext context) {
+    return SvgPicture.asset(
+      imgPath,
+      colorFilter:
+          isSelected ? const ColorFilter.mode(Colors.red, BlendMode.srcIn) : null,
     );
   }
 }
