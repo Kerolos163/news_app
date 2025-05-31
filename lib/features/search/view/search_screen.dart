@@ -65,6 +65,10 @@ class SearchScreen extends StatelessWidget {
                                   ),
                                   onTap: () {
                                     // TODO: Navigate to article details screen
+
+                                    Navigator.of(
+                                      context,
+                                    ).pushNamed("/details", arguments: article);
                                   },
                                 );
                               },

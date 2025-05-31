@@ -5,6 +5,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:news_app/core/serves/preference_manager.dart';
 import 'package:news_app/core/service_locator.dart';
 import 'package:news_app/core/theme/light.dart';
+import 'package:news_app/features/details/view/details_screen.dart';
 import 'package:news_app/features/home/models/news_article_model.dart';
 import 'package:news_app/features/splash/splash_screen.dart';
 import 'package:news_app/features/main/main_screen.dart';
@@ -41,6 +42,7 @@ class NewsApp extends StatelessWidget {
         '/main': (_) => const MainScreen(),
         '/onboarding': (_) => const OnboardingScreen(),
         '/signin': (_) => const SignInScreen(),
+        '/details': (_) => const DetailsScreen(),
       },
     );
   }

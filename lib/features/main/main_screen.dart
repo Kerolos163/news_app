@@ -70,7 +70,7 @@ class _MainScreenState extends State<MainScreen> {
 }
 
 class CustomSVG extends StatelessWidget {
-  const CustomSVG({super.key, required this.imgPath, required this.isSelected});
+  const CustomSVG({super.key, required this.imgPath, this.isSelected = false});
   final String imgPath;
   final bool isSelected;
 

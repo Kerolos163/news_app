@@ -39,6 +39,11 @@ class AppTheme {
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),
+        labelMedium: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.w700,
+          color: Color(0XFF141414),
+        ),
         titleMedium: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -54,9 +59,30 @@ class AppTheme {
           fontWeight: FontWeight.normal,
           color: Colors.white70,
         ),
+        displaySmall: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.normal,
+          color: Color(0XFF363636),
+        ),
         labelLarge: TextStyle(fontSize: 18, color: Color(0xFF8A8CA2)),
+        bodyLarge: TextStyle(
+          fontSize: 16,
+          height: 1.5,
+          fontWeight: FontWeight.normal,
+          color: Color(0XFF363636),
+        ),
       ),
-      appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
+      appBarTheme: const AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+
+        titleTextStyle: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w700,
+          color: Color(0XFF141414),
+        ),
+      ),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: backgroundColor,
         selectedItemColor: primaryColor,
