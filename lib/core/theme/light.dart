@@ -21,7 +21,13 @@ class AppTheme {
         onSecondary: Colors.white70,
       ),
       scaffoldBackgroundColor: backgroundColor,
+
       textTheme: const TextTheme(
+        titleLarge: TextStyle(
+          fontSize: 28,
+          fontWeight: FontWeight.bold,
+          color: Color(0xFF484A5A),
+        ),
         headlineLarge: TextStyle(
           fontSize: 32,
           fontWeight: FontWeight.w700,
@@ -48,12 +54,9 @@ class AppTheme {
           fontWeight: FontWeight.normal,
           color: Colors.white70,
         ),
+        labelLarge: TextStyle(fontSize: 18, color: Color(0xFF8A8CA2)),
       ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: backgroundColor,
-        foregroundColor: Colors.black,
-        elevation: 0,
-      ),
+      appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
         backgroundColor: backgroundColor,
         selectedItemColor: primaryColor,
@@ -65,7 +68,7 @@ class AppTheme {
         minLeadingWidth: 16,
       ),
       iconTheme: const IconThemeData(color: Colors.black),
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         elevation: 0,
       ),
