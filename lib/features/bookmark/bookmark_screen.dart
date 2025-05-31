@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:news_app/core/extensions/date_time.dart';
+import 'package:news_app/core/serves/preference_manager.dart';
 import 'package:news_app/features/home/widgets/news_card.dart';
 
 class BookmarkScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class BookmarkScreen extends StatelessWidget {
       appBar: AppBar(title: const Text('Bookmarks')),
       body: ValueListenableBuilder(
         /// TODO : Task - Don't Add Hard Coded Values
-        valueListenable: Hive.box('bookmarks').listenable(),
+        valueListenable: Hive.box(GetKey.bookmarks).listenable(),
         builder: (context, Box box, _) {
           if (box.isEmpty) {
             return const Center(child: Text('No bookmarked articles yet'));
