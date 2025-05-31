@@ -98,7 +98,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     /// TODO : Task - Use This From Model
                     Image.asset(
                       onboardingData[index].img,
-                      height: 320,
+                      height: 280,
                       fit: BoxFit.contain,
                     ),
                     const SizedBox(height: 32),
